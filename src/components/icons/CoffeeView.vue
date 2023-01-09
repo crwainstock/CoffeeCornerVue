@@ -9,6 +9,13 @@
         </div>
       </div>
     </div>
+
+    <div id="featured" :class="{ hide: !featuredCoffee }">
+      <div>
+        <img :src="featuredCoffee.image" />
+        <h3>{{ featuredCoffee.name }} {{ featuredCoffee.price }}</h3>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -59,6 +66,10 @@ img {
 }
 .hide {
   display: none;
+}
+#featured {
+  display: grid;
+  /* Need to finish this styling */
 }
 h5 {
   text-align: center;
