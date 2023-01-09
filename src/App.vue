@@ -1,0 +1,48 @@
+<template>
+  <main>
+    <nav>
+      <button @click="coffeeView = false" class="selectedView">
+        Add Coffee
+      </button>
+      <button @click="coffeeView = true" class="selectedView">
+        Choose Your Cup
+      </button>
+    </nav>
+    <div class="formContainer">
+      <h1>Coffee Corner</h1>
+      <coffee-form v-if="!coffeeView" @add="addCoffee" />
+      <coffee-view v-else :allCoffees="allCoffees" />
+    </div>
+  </main>
+</template>
+
+<script>
+import CoffeeForm from "./components/icons/CoffeeForm.vue";
+import CoffeeView from "./components/icons/CoffeeView.vue";
+
+export default {
+  name: "app",
+  components: {
+    coffeeForm: CoffeeForm,
+    coffeeView: CoffeeView,
+  },
+  data() {
+    return {
+      coffeeView: false,
+      allCoffees: [],
+    };
+  },
+  methods: {
+    addCoffee(coffee) {
+      this.allCoffees.push(coffee);
+      this.coffeeView = true;
+    },
+  },
+};
+</script>
+
+<style scoped>
+nav {
+  text-align: right;
+}
+</style>
