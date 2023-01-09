@@ -11,9 +11,9 @@
     </div>
 
     <!-- This featured area is still showing despite the conditional hide class rendering. Revisit. -->
-    <div id="featured" :class="{ hide: !featuredCoffee }">
+    <div id="featured" :class="{ hide: !featuredCoffee.image }">
       <div>
-        <img v-if="featuredCoffee" :src="featuredCoffee.image" />
+        <img :src="featuredCoffee.image" />
         <!-- I thought adding a v-if here might allow for conditional rendering of the featured image, but it's not working. -->
         <h3>{{ featuredCoffee.name }} {{ featuredCoffee.price }}</h3>
       </div>
@@ -28,7 +28,8 @@ export default {
     return {
       featuredCoffee: {
         name: "",
-        img: "",
+        image: "",
+        price: "",
       },
     };
   },
@@ -41,7 +42,8 @@ export default {
   methods: {
     handleClick(coffee) {
       this.featuredCoffee.name = coffee.name;
-      this.featuredCoffee.img = coffee.img;
+      this.featuredCoffee.price = coffee.price;
+      this.featuredCoffee.image = coffee.image;
       console.log(this.allCoffees);
     },
   },
@@ -70,8 +72,13 @@ img {
   display: none;
 }
 #featured {
-  display: grid;
+  /* display: grid; */
+  margin-top: 50px;
   /* Need to finish this styling */
+}
+#featured img {
+  width: 300px;
+  height: 300px;
 }
 h5 {
   text-align: center;
