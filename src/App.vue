@@ -19,6 +19,7 @@
 <script>
 import CoffeeForm from "./components/icons/CoffeeForm.vue";
 import CoffeeView from "./components/icons/CoffeeView.vue";
+import MyCoffees from "./components/icons/MyCoffees";
 
 export default {
   name: "app",
@@ -36,6 +37,9 @@ export default {
     addCoffee(coffee) {
       this.allCoffees.push(coffee);
       this.coffeeView = true;
+    },
+    created() {
+      this.allCoffees = MyCoffees;
     },
   },
 };

@@ -50,7 +50,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #container-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -72,9 +72,8 @@ img {
   display: none;
 }
 #featured {
-  /* display: grid; */
   margin-top: 50px;
-  /* Need to finish this styling */
+  /* Need to finish this styling. Featured section is below, not to the side.*/
 }
 #featured img {
   width: 300px;
