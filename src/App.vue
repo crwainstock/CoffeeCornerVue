@@ -38,10 +38,9 @@ export default {
       this.allCoffees.push(coffee);
       this.coffeeView = true;
     },
-    // This doesn't seem to be working...
-    created() {
-      this.allCoffees = MyCoffees;
-    },
+  },
+  created() {
+    this.allCoffees = MyCoffees;
   },
 };
 </script>

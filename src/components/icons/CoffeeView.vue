@@ -10,11 +10,10 @@
       </div>
     </div>
 
-    <!-- This featured area is still showing despite the conditional hide class rendering. Revisit. -->
     <div id="featured" :class="{ hide: !featuredCoffee.image }">
       <div>
         <img :src="featuredCoffee.image" />
-        <!-- I thought adding a v-if here might allow for conditional rendering of the featured image, but it's not working. -->
+
         <h3>{{ featuredCoffee.name }} {{ featuredCoffee.price }}</h3>
       </div>
     </div>
