@@ -8,13 +8,13 @@
           <h5>{{ coffee.name }} ({{ coffee.price }}€)</h5>
         </div>
       </div>
-    </div>
 
-    <div id="featured" :class="{ hide: !featuredCoffee.image }">
-      <div>
-        <img :src="featuredCoffee.image" />
+      <div id="featured" :class="{ hide: !featuredCoffee.image }">
+        <div>
+          <img :src="featuredCoffee.image" />
 
-        <h3>{{ featuredCoffee.name }} {{ featuredCoffee.price }}</h3>
+          <h3>{{ featuredCoffee.name }} {{ featuredCoffee.price }}</h3>
+        </div>
       </div>
     </div>
   </div>
@@ -71,13 +71,15 @@ img {
   display: none;
 }
 #featured {
-  margin-top: 50px;
-  /* Need to finish this styling. Featured section is below, not to the side.*/
+  display: grid;
+  align-items: center;
+  justify-items: center;
 }
 #featured img {
   width: 300px;
   height: 300px;
 }
+h3,
 h5 {
   text-align: center;
 }
