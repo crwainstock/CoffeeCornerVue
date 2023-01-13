@@ -1,6 +1,8 @@
 <template>
-  <grid :allCoffees="allCoffees" @setFeatureEvent="setFeature" />
-  <Cart :chosenItems="chosenItems" :class="{ hide: !chosenItems.length }" />
+  <div id="container-grid">
+    <grid :allCoffees="allCoffees" @setFeatureEvent="setFeature" />
+    <Cart :chosenItems="chosenItems" :class="{ hide: !chosenItems.length }" />
+  </div>
   <!-- <div id="featured" v-if="featuredCoffee.image">
     <div>
       <img :src="featuredCoffee.image" />

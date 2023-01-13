@@ -1,12 +1,10 @@
 <template>
   <div>
     <h2>Pick a favorite:</h2>
-    <div id="container-grid">
-      <div id="grid">
-        <div v-for="coffee in allCoffees" :key="coffee.id">
-          <img :src="coffee.image" @click="handleClick(coffee)" />
-          <h5>{{ coffee.name }} ({{ coffee.price }}€)</h5>
-        </div>
+    <div id="grid">
+      <div v-for="coffee in allCoffees" :key="coffee.id">
+        <img :src="coffee.image" @click="handleClick(coffee)" />
+        <h5>{{ coffee.name }} ({{ coffee.price }}€)</h5>
       </div>
     </div>
   </div>
