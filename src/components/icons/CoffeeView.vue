@@ -3,6 +3,7 @@
     <grid :allCoffees="allCoffees" @setFeatureEvent="setFeature" />
     <Cart :chosenItems="chosenItems" :class="{ hide: !chosenItems.length }" />
   </div>
+  <!-- For featured section -->
   <!-- <div id="featured" v-if="featuredCoffee.image">
     <div>
       <img :src="featuredCoffee.image" />
@@ -35,6 +36,7 @@ export default {
     },
   },
   methods: {
+    // For featured section
     // handleClick(coffee) {
     //   this.featuredCoffee.name = coffee.name;
     //   this.featuredCoffee.price = coffee.price;
