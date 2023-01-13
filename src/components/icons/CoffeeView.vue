@@ -1,26 +1,18 @@
 <template>
-  <div>
-    <h2>Pick a favorite:</h2>
-    <div id="container-grid">
-      <div id="grid">
-        <div v-for="coffee in allCoffees" :key="coffee.id">
-          <img :src="coffee.image" @click="handleClick(coffee)" />
-          <h5>{{ coffee.name }} ({{ coffee.price }}€)</h5>
-        </div>
-      </div>
+  <grid :allCoffees="allCoffees" @setFeatureEvent="setFeature" />
 
-      <div id="featured" :class="{ hide: !featuredCoffee.image }">
-        <div>
-          <img :src="featuredCoffee.image" />
+  <div id="featured" v-if="featuredCoffee.image">
+    <div>
+      <img :src="featuredCoffee.image" />
 
-          <h3>{{ featuredCoffee.name }} {{ featuredCoffee.price }}</h3>
-        </div>
-      </div>
+      <h3>{{ featuredCoffee.name }} {{ featuredCoffee.price }}€</h3>
     </div>
   </div>
 </template>
 
 <script>
+import Grid from "./Grid.vue";
+
 export default {
   name: "CoffeeView",
   data() {
@@ -31,6 +23,9 @@ export default {
         price: "",
       },
     };
+  },
+  components: {
+    Grid,
   },
   props: {
     allCoffees: {
