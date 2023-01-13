@@ -45,7 +45,13 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+/* This worked for importing and using Google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&display=swap");
+html,
+body {
+  font-family: "Noto Sans", sans-serif;
+}
 nav {
   text-align: right;
 }
